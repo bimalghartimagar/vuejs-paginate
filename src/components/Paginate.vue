@@ -349,7 +349,7 @@ export default {
           }
         }
         // 3rd - loop thru high end of margin pages
-        if (this.lowEndMargin) {
+        if (this.highEndMargin) {
           for (
             let i = this.pageCount - 1;
             i >= this.pageCount - this.marginPages;

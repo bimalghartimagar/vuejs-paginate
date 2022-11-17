@@ -182,7 +182,6 @@ HTML
 | `prev-text`       | `String` | Text for the previous button. You can use HTML here. **default: Prev**  |
 | `next-text`       | `String` | Text for the next button. You can use HTML here. **default: Next**  |
 | `break-view-text` | `String` | Text for the break view indicator. **default: ...**  |
-| `initial-page` <br> **Deprecated after v2.0.0** | `Number` | The index of initial page which selected. **default: 0** |
 | `force-page`      | `Number` | The page number of overridden selected page. |
 | `click-handler`   | `Function` | The method to call when page clicked. Use clicked page number as parameter. |
 | `container-class` | `String` | CSS class name for the layout. |
@@ -201,6 +200,10 @@ HTML
 | `first-button-text` | `String` | Text for first button. (Not visible when `first-last-button` is false. You can use HTML here.) **default: 'First'** |
 | `last-button-text` | `String` | Text for last button. (Not visible when `first-last-button` is false. You can use HTML here.) **default: 'Last'** |
 | `hide-prev-next` | `Boolean` | Hide prev/next button when there is no previous or next page. **default: false** |
+| `low-end-margin` | `Boolean` | Hide/show leftmost margin pages if configured. **default: true** |
+| `high-end-margin` | `Boolean` | Hide/show rightmost margin pages if configured. **default: true** |
+| `low-end-break-view` | `Boolean` | Hide/show leftmost break-view if configured. **default: true** |
+| `high-end-break-view` | `Boolean` | Hide/show rightmost break-view if configured. **default: true** |
 
 ## Customize inner HTML (experimental)
 You can customize the inner HTML of the previous button, next button, and break view indicator, with the `slot` tag.
