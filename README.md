@@ -204,6 +204,7 @@ HTML
 | `high-end-margin` | `Boolean` | Hide/show rightmost margin pages if configured. **default: true** |
 | `low-end-break-view` | `Boolean` | Hide/show leftmost break-view if configured. **default: true** |
 | `high-end-break-view` | `Boolean` | Hide/show rightmost break-view if configured. **default: true** |
+| `page-format-fnc` | `Function` | Function to format page content. **default: (page) => page** |
 
 ## Customize inner HTML (experimental)
 You can customize the inner HTML of the previous button, next button, and break view indicator, with the `slot` tag.

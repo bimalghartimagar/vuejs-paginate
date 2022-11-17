@@ -259,6 +259,10 @@ export default {
       type: Boolean,
       default: false,
     },
+    pageFormatFnc: {
+      type: Function,
+      default: (page) => page,
+    },
   },
   beforeUpdate() {
     if (this.forcePage === undefined) return;
@@ -281,7 +285,7 @@ export default {
         for (let index = 0; index < this.pageCount; index++) {
           let page = {
             index: index,
-            content: index + 1,
+            content: this.pageFormatFnc(index + 1),
             selected: index === this.selected - 1,
           };
           items[index] = page;
@@ -292,7 +296,7 @@ export default {
         let setPageItem = (index) => {
           let page = {
             index: index,
-            content: index + 1,
+            content: this.pageFormatFnc(index + 1),
             selected: index === this.selected - 1,
           };
 
