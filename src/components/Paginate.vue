@@ -42,16 +42,15 @@
         tabindex="0"
         ><slot name="breakViewContent">{{ breakViewText }}</slot></a
       >
-      <a v-else-if="page.disabled" :class="pageLinkClass" tabindex="0">{{
-        page.content
-      }}</a>
+      <a v-else-if="page.disabled" :class="pageLinkClass" tabindex="0" v-html="htmlPrefix+page.content"></a>
       <a
         v-else
         @click="handlePageSelected(page.index + 1)"
         @keyup.enter="handlePageSelected(page.index + 1)"
         :class="pageLinkClass"
         tabindex="0"
-        >{{ page.content }}</a
+        v-html="htmlPrefix+page.content"
+        ></a
       >
     </li>
 
@@ -120,7 +119,8 @@
           disabledClass,
         ]"
         tabindex="0"
-        >{{ page.content }}</a
+        v-html="htmlPrefix+page.content"
+        ></a
       >
       <a
         v-else
@@ -129,7 +129,8 @@
         @keyup.enter="handlePageSelected(page.index + 1)"
         :class="[pageLinkClass, page.selected ? activeClass : '']"
         tabindex="0"
-        >{{ page.content }}</a
+        v-html="htmlPrefix+page.content"
+        ></a
       >
     </template>
     <a
@@ -262,6 +263,10 @@ export default {
     pageFormatFnc: {
       type: Function,
       default: (page) => page,
+    },
+    htmlPrefix: {
+      type: String,
+      default: "",
     },
   },
   beforeUpdate() {

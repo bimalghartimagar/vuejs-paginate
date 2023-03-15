@@ -20,6 +20,7 @@
         :break-view-class="'break-view'"
         :break-view-link-class="'break-view-link'"
         :first-last-button="true"
+        :html-prefix="htmlPrefix"
       ></paginate>
     </div>
 
@@ -91,9 +92,10 @@
 export default {
   data() {
     return {
-      page: 1
+      page: 1,
+      htmlPrefix: '<span class="sr-only">Page&nbsp;</span>'
     }
-  },
+  }
 }
 </script>
 
